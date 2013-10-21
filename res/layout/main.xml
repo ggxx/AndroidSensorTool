@@ -10,5 +10,25 @@
             android:layout_height="wrap_content"
             android:text="Hello World, MyActivity"
             />
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Proximity"
+            android:id="@+id/button_Proximity"
+            />
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Print All"
+            android:id="@+id/button_PrintAll"
+            />
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Sensors"
+            android:id="@+id/textView_Sensors"/>
 </LinearLayout>
 
