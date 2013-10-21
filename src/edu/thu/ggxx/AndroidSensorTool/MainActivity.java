@@ -36,6 +36,15 @@ public class MainActivity extends Activity {
             }
         });
 
+        Button btnRecord = (Button) findViewById(R.id.button_Record);
+        btnRecord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecordActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+
         Button btnPrintAll = (Button) findViewById(R.id.button_PrintAll);
         btnPrintAll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,13 +56,6 @@ public class MainActivity extends Activity {
                 str.append("该手机有" + sensors.size() + "个传感器,分别是:\n");
                 for (int i = 0; i < sensors.size(); i++) {
                     Sensor s = sensors.get(i);
-                    str.append("设备名称:" + s.getName() + "\n");
-                    str.append("设备版本:" + s.getVersion() + "\n");
-                    str.append("通用类型号:" + s.getType() + "\n");
-                    str.append("设备商名称:" + s.getVendor() + "\n");
-                    str.append("传感器功耗:" + s.getPower() + "\n");
-                    str.append("传感器分辨率:" + s.getResolution() + "\n");
-                    str.append("传感器最大量程:" + s.getMaximumRange() + "\n");
                     switch (s.getType()) {
                         case Sensor.TYPE_ACCELEROMETER:
                             str.append(i + "加速度传感器");
@@ -84,6 +86,13 @@ public class MainActivity extends Activity {
                             break;
                     }
                     str.append("\n");
+                    str.append("设备名称:" + s.getName() + "\n");
+                    str.append("设备版本:" + s.getVersion() + "\n");
+                    str.append("通用类型号:" + s.getType() + "\n");
+                    str.append("设备商名称:" + s.getVendor() + "\n");
+                    str.append("传感器功耗:" + s.getPower() + "\n");
+                    str.append("传感器分辨率:" + s.getResolution() + "\n");
+                    str.append("传感器最大量程:" + s.getMaximumRange() + "\n\n");
                 }
                 tvSensors.setText(str);
             }

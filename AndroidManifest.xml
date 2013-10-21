@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProximityActivity"/>
+        <activity android:name=".RecordActivity"/>
     </application>
     <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
 </manifest>

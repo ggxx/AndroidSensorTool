@@ -21,14 +21,27 @@
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:text="Record"
+            android:id="@+id/button_Record"/>
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:text="Print All"
             android:id="@+id/button_PrintAll"
             />
 
-    <TextView
+    <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Sensors"
-            android:id="@+id/textView_Sensors"/>
+            android:id="@+id/scrollView">
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Sensors"
+                android:id="@+id/textView_Sensors"/>
+    </ScrollView>
+
 </LinearLayout>
 
