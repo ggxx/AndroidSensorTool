@@ -1,21 +1,24 @@
-package edu.thu.ggxx.AndroidSensorTool;
+package edu.thu.ggxx.androidsensortool;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
-import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+import edu.thu.ggxx.androidsensortool.util.SensorUtil;
 
 import java.util.List;
 
 public class MainActivity extends Activity {
 
-    private SensorManager sensorManager;
-    private List<Sensor> sensors;
+    private static String TAG = "MainActivity";
+
+    private void showUnsupportedSensor() {
+        Toast.makeText(this, "unsupported sensor", Toast.LENGTH_SHORT).show();
+    }
 
     /**
      * Called when the activity is first created.
@@ -31,8 +34,12 @@ public class MainActivity extends Activity {
         btnProximity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ProximityActivity.class);
-                MainActivity.this.startActivity(intent);
+                if (SensorUtil.isSupported(MainActivity.this, Sensor.TYPE_PROXIMITY)) {
+                    Intent intent = new Intent(MainActivity.this, ProximityActivity.class);
+                    MainActivity.this.startActivity(intent);
+                } else {
+                    showUnsupportedSensor();
+                }
             }
         });
 
@@ -49,11 +56,9 @@ public class MainActivity extends Activity {
         btnPrintAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-                sensors = sensorManager.getSensorList(Sensor.TYPE_ALL);// 获得传感器列表
-
+                List<Sensor> sensors = SensorUtil.getSensorList(MainActivity.this);// 获得传感器列表
                 StringBuffer str = new StringBuffer();
-                str.append("该手机有" + sensors.size() + "个传感器,分别是:\n");
+                str.append("该手机有" + sensors.size() + "个传感器,分别是:\n\n");
                 for (int i = 0; i < sensors.size(); i++) {
                     Sensor s = sensors.get(i);
                     switch (s.getType()) {
@@ -81,8 +86,17 @@ public class MainActivity extends Activity {
                         case Sensor.TYPE_TEMPERATURE:
                             str.append(i + "温度传感器");
                             break;
+                        case Sensor.TYPE_GRAVITY:
+                            str.append(i + "重力传感器");
+                            break;
+                        case Sensor.TYPE_LINEAR_ACCELERATION:
+                            str.append(i + "线性加速度传感器");
+                            break;
+                        case Sensor.TYPE_ROTATION_VECTOR:
+                            str.append(i + "旋转矢量传感器");
+                            break;
                         default:
-                            str.append(i + "未知传感器");
+                            str.append(i + "未知传感器,类型:" + s.getType());
                             break;
                     }
                     str.append("\n");

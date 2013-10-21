@@ -1,4 +1,4 @@
-package edu.thu.ggxx.AndroidSensorTool;
+package edu.thu.ggxx.androidsensortool;
 
 import android.app.Activity;
 import android.hardware.Sensor;
@@ -6,7 +6,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.os.Vibrator;
 import android.util.Log;
 
@@ -67,7 +66,7 @@ public class ProximityActivity extends Activity implements SensorEventListener {
         } else {
             if (thisVal < this.lastVal) {
                 // 接近长振动
-                this.vibrator.vibrate(1000);
+                this.vibrator.vibrate(200);
             } else {
                 // 离开短振动
                 this.vibrator.vibrate(100);

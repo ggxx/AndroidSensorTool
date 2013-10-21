@@ -27,6 +27,12 @@
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:text="Test"
+            android:id="@+id/button_Test"/>
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:text="Print All"
             android:id="@+id/button_PrintAll"
             />
