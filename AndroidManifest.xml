@@ -20,6 +20,12 @@
         </activity>
         <activity android:name=".ProximityActivity"/>
         <activity android:name=".RecordActivity"/>
+        <activity android:name=".AccelerometerActivity"/>
+        <activity android:name=".OrientationActivity"/>
+        <activity android:name=".LightActivity"/>
+        <activity android:name=".PressureActivity"/>
+        <activity android:name=".SensorsActivity"/>
+        <activity android:name=".MagneticFieldActivity"/>
     </application>
 
     <uses-permission android:name="android.permission.VIBRATE"></uses-permission>

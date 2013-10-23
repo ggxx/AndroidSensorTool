@@ -13,10 +13,10 @@ import android.widget.TextView;
  * Created with IntelliJ IDEA.
  * User: ggxx
  * Date: 13-10-23
- * Time: 下午8:15
+ * Time: 下午10:42
  * To change this template use File | Settings | File Templates.
  */
-public class AccelerometerActivity extends Activity implements SensorEventListener {
+public class MagneticFieldActivity extends Activity implements SensorEventListener {
 
     private SensorManager sensorManager;
     private TextView tvAccX;
@@ -26,7 +26,7 @@ public class AccelerometerActivity extends Activity implements SensorEventListen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.accelerometer);
+        this.setContentView(R.layout.orientation);
 
         tvAccX = (TextView) findViewById(R.id.textView_X);
         tvAccY = (TextView) findViewById(R.id.textView_Y);
@@ -37,7 +37,7 @@ public class AccelerometerActivity extends Activity implements SensorEventListen
     @Override
     protected void onResume() {
         super.onResume();
-        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD), SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
@@ -49,9 +49,9 @@ public class AccelerometerActivity extends Activity implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent event) {
         float[] values = event.values;
-        tvAccX.setText("X方向加速度：" + String.valueOf(values[0]));
-        tvAccY.setText("Y方向加速度：" + String.valueOf(values[1]));
-        tvAccZ.setText("Z方向加速度：" + String.valueOf(values[2]));
+        tvAccX.setText("X方向：" + String.valueOf(values[0]));
+        tvAccY.setText("Y方向：" + String.valueOf(values[1]));
+        tvAccZ.setText("Z方向：" + String.valueOf(values[2]));
     }
 
     @Override

@@ -52,14 +52,19 @@ public class RecordActivity extends Activity {
 
     @Override
     protected void onResume() {
-        recordThread.start();
         super.onResume();
+        recordThread.start();
     }
 
     @Override
     protected void onPause() {
         recordThread.pause();
         super.onPause();
+    }
+
+    @Override
+    protected  void onStop(){
+        super.onStop();
     }
 
     public class RecordThread extends Thread {
