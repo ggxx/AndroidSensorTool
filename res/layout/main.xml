@@ -5,43 +5,61 @@
               android:layout_height="fill_parent"
         >
 
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World, MyActivity"
-            />
-
-    <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Proximity"
-            android:id="@+id/button_Proximity"
-            />
-
-    <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Record"
-            android:id="@+id/button_Record"/>
-
-    <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Print All"
-            android:id="@+id/button_PrintAll"
-            />
-
     <ScrollView
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:id="@+id/scrollView">
-
-        <TextView
+        <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Sensors"
-                android:id="@+id/textView_Sensors"/>
+                android:layout_height="wrap_content">
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Accelerometer"
+                    android:id="@+id/button_Accelerometer"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Orientation"
+                    android:id="@+id/button_Orientation"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pressure"
+                    android:id="@+id/button_Pressure"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Magnetic Field"
+                    android:id="@+id/button_Magnetic"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Light"
+                    android:id="@+id/button_Light"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Proximity"
+                    android:id="@+id/button_Proximity"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Record"
+                    android:id="@+id/button_Record"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Test"
+                    android:id="@+id/button_Test"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Print All"
+                    android:id="@+id/button_PrintAll"
+                    />
+        </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
 

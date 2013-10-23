@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="edu.thu.ggxx.AndroidSensorTool"
+          package="edu.thu.ggxx.androidsensortool"
           android:versionCode="1"
           android:versionName="1.0">
 
@@ -20,6 +20,14 @@
         </activity>
         <activity android:name=".ProximityActivity"/>
         <activity android:name=".RecordActivity"/>
+        <activity android:name=".AccelerometerActivity"/>
+        <activity android:name=".OrientationActivity"/>
+        <activity android:name=".LightActivity"/>
+        <activity android:name=".PressureActivity"/>
+        <activity android:name=".SensorsActivity"/>
+        <activity android:name=".MagneticFieldActivity"/>
     </application>
+
     <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
 </manifest>

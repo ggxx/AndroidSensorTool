@@ -1,4 +1,4 @@
 AndroidSensorTool
 =================
 
-A tool for testing android sensors.
+An app tool for testing android sensors.
