@@ -45,6 +45,12 @@ public class ProximityActivity extends Activity implements SensorEventListener {
         this.sensorManager.registerListener(this, this.sensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
+
+    @Override
+    protected void onStop() {
+        this.sensorManager.unregisterListener(this);
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -52,7 +58,6 @@ public class ProximityActivity extends Activity implements SensorEventListener {
         // 一定要在这解注册
         this.sensorManager.unregisterListener(this, this.sensor);
     }
-
 
     @Override
     public void onSensorChanged(SensorEvent event) {
